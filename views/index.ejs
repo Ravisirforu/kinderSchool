@@ -339,7 +339,9 @@
            <div class="left"> <h1 class="text-2xl font-[600] text-white">CONTACT US</h1>
         <div class="div text-xl flex flex-col gap-3 text-white pt-10">
             <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
-            <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin.contact2%> , <%= admin.contact1%> , 9706056699 </div>
+            <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin && admin.contact1 ? admin.contact1
+                                : '9346017770' %>, <%= admin && admin.contact1 ? admin.contact1
+                                : '9346017770' %> , 9706056699 </div>
             <div class="box1 flex gap-5"> <i class="ri-mail-line text-[#ABCD52]"></i>info@allseasons.co.in</div>
             <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
         </div>
