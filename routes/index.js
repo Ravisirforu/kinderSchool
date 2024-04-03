@@ -45,9 +45,9 @@ router.post('/register',async function(req,res,next){
   };
 
 });
-router.get('/dashboard', isLoggedIn, async function(req,res,next){
-  res.render("admin/dashboard")
-});
+router.get('/dashboard',isLoggedIn, async function(req,res,next){
+    res.render("admin/dashboard")
+  });
 router.get('/manageContactDetails',async function(req,res,next){
   const admin = await userModel.findOne({ role: 'admin' });
   res.render("admin/manageContactDetails",{admin})
