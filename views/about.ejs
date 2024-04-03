@@ -1,0 +1,275 @@
+<% include ./partials/header.ejs %>
+<style>
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0.4;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .bounce {
+        animation: bounce 2s infinite;
+    }
+
+    .active-button {
+        background-color: #F49C08 !important;
+
+        transition: all ease 0.5s;
+    }
+
+    nav .right ul li a {
+        transition: color 0.5s ease, transform 0.5s ease;
+    }
+
+    nav .right ul li a:hover {
+        color: #F49C08;
+        transform: scale(1.1);
+        text-decoration: none;
+    }
+ 
+    .gola {
+        position: relative; /* Ensure positioning context */
+    }
+    
+    .gola::before {
+        content: ""; /* Create a pseudo-element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px dashed white; /* Add the border */
+        border-radius: 50%; /* Ensure rounded border */
+    }
+    
+    .box:hover .gola::before {
+        animation: rotateBorder 10s linear infinite; /* Apply animation on hover */
+    }
+    .box:hover img {
+        transform: scale(1.05); /* Increase scale to 110% on hover */
+        transition: transform 0.3s ease; /* Add smooth transition effect */
+    }
+   
+    @keyframes rotateBorder {
+        from {
+            transform: rotate(0deg); /* Initial rotation */
+        }
+        to {
+            transform: rotate(360deg); /* Rotate full circle */
+        }
+    }
+</style>
+<div class="div main">
+
+  <nav class="flex h-fit flex-col">
+    <div class="div h-10 w-full  bg-[#7A0222]"></div>
+    <div class="div flex items-center justify-between py-5 px-14 border-b-2">
+        <div class="left">
+            <a href="/"><img class="h-[90px]" src="/images/all-seasons_page-0001.jpg" alt=""></a>
+        </div>
+        <div class="right">
+            <ul class="flex gap-10 items-center  ">
+                <li class="text-[#7A0222] font-bold"><a href="/">Best Play SchooL </a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/about">About</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/gallery">Gallery</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/contact">Contact Us</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/login">Login</a></li>
+                <h4><i id="menu-btn" class="ri-menu-line"></i></h4>
+            </ul>
+        </div>
+    </div>
+</nav> <div id="slidebar" class="bg-[#7A0222]">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/contact">Contact</a>
+    <!-- <a href="/register">Register</a> -->
+    <a href="/login">Login</a>
+</div>
+<div class="pagee-1 relative h-[60vh] w-full ">
+<div style="background-image: url('/images/1711957271544.jpg'); background-attachment: fixed;" class="div w-full h-full  max-sm:w-full  bg-cover opacity-95 bg-center absolute top-0">
+    
+</div> 
+<div class="div bg-[#e0d9d2] ">
+    <img class="lg:h-10 rotate-180" src="https://wordpress.vecurosoft.com/knirpse/wp-content/uploads/2022/01/main-shape-after.png" alt="">
+</div> 
+<div class="div absolute top-[98%] md:top-[97%] lg:top-[90%] xl:top-[91%]  ">
+    <img class="lg:h-10 " src="https://wordpress.vecurosoft.com/knirpse/wp-content/uploads/2022/01/main-shape-after.png" alt="">
+</div>
+</div>
+<div class="pagee2 py-5 flex flex-col items-center h-fit w-full">
+    <h1 class="text-4xl font-[700] text-[#7A0222]">About Us</h1>
+   <div class="div h-full flex w-full gap-10  py-10 px-20 ">
+    <div class="left h-[25vw] overflow-hidden rounded-2xl w-[30vw] bg-yellow-400">
+        <img class="h-full w-full object-cover" src="/images/1711957272839.jpg" alt="">
+    </div>
+    <div class="left w-[60vw]">
+      <p>
+        We at ALL SEASONS believe in empowering each and every child with the gift of compassionate teaching that leads to passionate learning. That’s why, we set out to create an atmosphere for creating, value, voice and vision among kids with play way methods . At All Seasons we believe that Every child is unique and full of Creativities and Innovations. <br> <br>
+ALL SEASONS is different & Unique Preschool with its unique designed curriculum which include all round personality development, yoga, dance, music and many more such activities to prepare a child for formal education. We at All Seasons made efforts to create world of happiness & satisfaction not just of the children but also their parents. 
+
+      </p>
+      
+      <p class="pt-10">
+       <span class="text-lg">We lay emphasis on building the right foundation for the child</span>  through play activities and collaborative group work.
+
+<br> <br>       Our spontaneous, adaptable play-based approach puts our young learners at ease and prepares them for primary school. Our curriculum and assessment prove that the children are well-versed in their concepts around numbers and alphabets.
+We’re constantly thinking about adapting our teaching approach to incorporate the ever-increasing, ever-changing student’s face as they grow.
+
+      </p>
+    </div>
+   </div>
+</div>
+<div class="pagee2 py-5 flex flex-col items-center h-fit w-full">
+    <h1 class="text-4xl text-[#7A0222]">Our Vision</h1>
+   <div class="div h-full flex w-full gap-10  py-10 px-20 ">
+   
+    <div class="left w-[60vw]">
+      <p>
+        At our Kinder Pre-School, we strive to cultivate an environment where every child embodies the ALLEASONS of learning and growth. ALLEASONS stands for:
+      </p>
+      <div class="div pt-5">
+
+          <li>Active</li>
+          <li>Life-Long Learner</li>
+          <li>Lively</li>
+          <li>Skilled</li>
+          <li>Energetic</li>
+          <li>Achiever</li>
+          <li>Shining</li>
+          <li>Open Minded</li>
+          <li>Noetic</li>
+          <li>Successful</li>
+      </div>
+      <p class="pt-5">We are committed to nurturing these qualities in all our children, ensuring they embark on a journey filled with exploration, discovery, and achievement.</p>
+    </div>
+    <div class="left h-[25vw] overflow-hidden rounded-2xl w-[30vw] bg-yellow-400">
+        <img class="h-full w-full object-cover" src="/images/1711957272839.jpg" alt="">
+    </div>
+   </div>
+</div>
+
+<div class="page4 bg-[#A81B49]">
+    
+    <div class="sub-footer lg:h-[60vh] lg:px-32 flex-col lg:flex-row py-10 flex justify-between">
+        <div class="part-1 lg:w-[35%]">
+            <div class="left">
+                <a href="/"><img class="h-[90px]" src="/images/all-seasons_page-0001.jpg" alt=""></a>
+            </div>
+            <p class=" pt-10 text-white">ALL SEASONS is different & Unique Preschool with its unique designed curriculum which include all round personality development, yoga, dance, music and many more such activities to prepare a child for formal education. </p>
+<div class="div gap-3 pt-10 text-white flex">
+    <i class="ri-facebook-fill hover:bg-green-500 text-lg bg-[#FF6666] rounded-full px-1"></i>
+    <i class="ri-instagram-line hover:bg-green-500 text-lg bg-[#1AB9FF] rounded-full px-1"></i>
+    <i class="ri-twitter-x-fill hover:bg-green-500 text-lg bg-yellow-300 rounded-full px-1"></i>
+    <i class="ri-linkedin-fill hover:bg-green-500 text-white text-lg bg-[#ABCD52] rounded-full px-1"></i>
+</div>
+        </div>
+
+        <div class="part-4 flex flex-col lg:flex-row gap-10 justify-between lg:pl-10 lg:gap-2 lg:w-[65%]">
+           <div class="left"> <h1 class="text-2xl font-[600] text-white">CONTACT US</h1>
+        <div class="div text-xl flex flex-col gap-3 text-white pt-10">
+            <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
+            <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i>97065 18256 , 98640 60737 , 97060 56699 </div>
+            <div class="box1 flex gap-5"> <i class="ri-mail-line text-[#ABCD52]"></i>info@allseasons.co.in</div>
+            <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
+        </div>
+        </div>
+           <div class="left"> <h1 class="text-2xl font-[600] text-white">NEWS FEED</h1>
+        <div class="div text-xl flex flex-col gap-1 text-white pt-10">
+             <h1>Hello World!</h1>
+            <div class="box1 flex gap-5"> <i class="ri-calendar-2-fill text-[#ABCD52]"></i> 26 March 2024</div>
+           <h1 class="pt-5">What can tracks teach kids Preschool</h1> 
+            <div class="box1 flex gap-5"><i class="ri-calendar-2-fill text-[#ABCD52]"></i>08 January 2022</div>
+        </div>
+        </div>
+          
+        </div>
+    </div>
+   
+</div>
+</div>
+<div id="scroll-to-top" class="bounce" onclick="scrollToTop()">
+    <span>&#8593;</span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/javascripts/sidebar.js"></script>
+
+<!-- Scroll to top JS -->
+<script src="/javascripts/scrollToTop.js"></script>
+ <!-- Initialize Swiper -->
+ <script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+    <!-- FAQ Section JS -->
+    <script>
+        let answers = document.querySelectorAll(".accordion");
+        answers.forEach((event) => {
+            event.addEventListener("click", () => {
+                if (event.classList.contains("active")) {
+                    event.classList.remove("active");
+                } else {
+                    event.classList.add("active");
+                }
+            });
+        });
+    </script>
+

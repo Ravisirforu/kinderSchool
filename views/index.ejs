@@ -1,0 +1,402 @@
+<% include ./partials/header.ejs %>
+<style>
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0.4;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .bounce {
+        animation: bounce 2s infinite;
+    }
+
+    .active-button {
+        background-color: #F49C08 !important;
+
+        transition: all ease 0.5s;
+    }
+
+    nav .right ul li a {
+        transition: color 0.5s ease, transform 0.5s ease;
+    }
+
+    nav .right ul li a:hover {
+        color: #F49C08;
+        transform: scale(1.1);
+        text-decoration: none;
+    }
+ 
+    .gola {
+        position: relative; /* Ensure positioning context */
+    }
+    
+    .gola::before {
+        content: ""; /* Create a pseudo-element */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px dashed white; /* Add the border */
+        border-radius: 50%; /* Ensure rounded border */
+    }
+    
+    .box:hover .gola::before {
+        animation: rotateBorder 10s linear infinite; /* Apply animation on hover */
+    }
+    .box:hover img {
+        transform: scale(1.05); /* Increase scale to 110% on hover */
+        transition: transform 0.3s ease; /* Add smooth transition effect */
+    }
+   
+    @keyframes rotateBorder {
+        from {
+            transform: rotate(0deg); /* Initial rotation */
+        }
+        to {
+            transform: rotate(360deg); /* Rotate full circle */
+        }
+    }
+</style>
+<div class="div main">
+
+  <nav class="flex h-fit flex-col">
+    <div class="div h-10 w-full lg:px-5 flex justify-between bg-[#7A0222]">
+        <div class="div text-[10px] lg:text-sm md:text-sm flex items-center h-full lg:px-2 gap-2 lg:gap-5 text-white">
+            <div class="box1 flex gap-1 lg:gap-2"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
+            <div class="box1 flex gap-1 lg:gap-5"><i class="ri-phone-line text-[#ABCD52]"></i>97065 18256  </div>
+            <div class="box1 flex gap-1 lg:gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
+        </div>
+        <div class="div gap-3 p-1 text-white hidden md:flex lg:flex">
+            <i class="ri-facebook-fill hover:bg-green-500 lg:text-lg bg-[#FF6666] rounded-full px-2 py-1"></i>
+            <i class="ri-instagram-line hover:bg-green-500 text-lg bg-[#1AB9FF] rounded-full px-2 py-1"></i>
+            <i class="ri-twitter-x-fill hover:bg-green-500 text-lg bg-yellow-300 rounded-full px-2 py-1"></i>
+            <i class="ri-linkedin-fill hover:bg-green-500 text-white text-lg bg-[#ABCD52] rounded-full px-2 py-1"></i>
+        </div>
+    </div>
+    <div class="div flex items-center justify-between py-5 px-14 border-b-2">
+        <div class="left">
+            <a href="/"><img class="h-[90px]" src="/images/all-seasons_page-0001.jpg" alt=""></a>
+        </div>
+        <div class="right">
+            <ul class="flex gap-10 items-center  ">
+                <li class="text-[#7A0222] font-bold"><a href="/">Best Play SchooL </a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/about">About</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/gallery">Gallery</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/contact">Contact Us</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/login">Login</a></li>
+                <h4><i id="menu-btn" class=" text-[#7A0222] ri-menu-line"></i></h4>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="slidebar" class="bg-[#7A0222]">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/contact">Contact</a>
+    <!-- <a href="/register">Register</a> -->
+    <a href="/login">Login</a>
+</div>
+<div class="page-1 ">
+   
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="/images/1711957271544.jpg" alt="">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="/images/1711957272477.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/1711957272839.jpg" alt="">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="/images/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="/images/WhatsApp Image 2024-04-02 at 6.24.57 PM.jpeg" alt="">
+            </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    
+</div>
+
+<div class="page-3 flex flex-col items-start px-10 lg:px-28 py-10">
+    <div class="div flex flex-col lg:flex-row gap-20 items-start py-5">
+        <div class="div flex items-start flex-col gap-5">
+            <h1 class="text-xl md:text-3xl lg:text-xl font-semibold  leading-none text-[#978312]">More About Us</h1>
+            <h1 class="text-xl md:text-3xl lg:text-5xl w-[40vw] font-bold lg:font-[900] text-[#7A0222]    leading-none">Special Care For Your Children</h1>
+
+            <p class="lg:w-[40vw] text-lg text-[#74787C]">ALL SEASONS is different & Unique Preschool with its unique designed curriculum which include all round personality development, yoga, dance, music and many more such activities to prepare a child for formal education. We at All Seasons made efforts to create world of happiness & satisfaction not just of the children but also their parents. </p>
+            <a href="" class="border-2 text-[#978312] px-5 py-2 rounded-full border-[#978312]">Learn More..</a>
+        </div>
+        <div class="div lg:h-[25vw] h-full w-full rounded-3xl overflow-hidden lg:w-[35vw] bg-red-400">
+            <img class="h-full  w-full object-cover" src="/images/5.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="div h-[60vh] relative w-full">
+    <img class="h-full w-full" src="https://img.freepik.com/free-vector/colorful-frame-background-creative-design-kids-vector_53876-156361.jpg?size=626&ext=jpg&ga=GA1.1.1887574231.1711843200&semt=ais" alt="">
+    <div class="div h-full w-full absolute gap-3 pl-5 sm:gap-3 lg:gap-8 flex-col top-0 flex pt-28  ">
+        <h1 class="lg:text-5xl lg:font-[700] lg:pl-96 text-[#7A0222] ">OUR MISSION</h1>
+        <p class=" lg:text-xl lg:pl-[35vw] text-[#5b5e60] ">Our Mission is to provide high quality education through activity <br> - based learning and giving them the skills for life.</p>
+        <p class=" lg:text-xl lg:pl-[35vw] text-[#5b5e60] "> We are equally concerned to provide for the most able children and <br> - have many strategies to extend and challenge these pupils. </p>
+    </div>
+</div>
+<div class="page-2">
+    <h1 class="text-xl md:text-3xl lg:text-xl font-semibold text-[#4084bf] leading-none">Why Choose Us</h1>
+    <h1 class="text-xl md:text-3xl lg:text-5xl font-bold  lg:font-semibold pt-3 text-[#7A0222]  leading-none">All Season Pre-School Assam</h1>
+   <p class="text-[#777777] pt-2  text-center">We at ALL SEASONS believe in empowering each and every child with the gift of compassionate <br> teaching that leads to passionate learning. </p>
+<div class="div grid lg:grid-cols-3 gap-16 px-4 lg:px-24 place-items-center pt-10">
+    <div class="box lg:h-[20vw] w-full rounded-xl flex-col items-center gap-5 flex py-7 justify-center lg:w-[25vw] bg-[#FF6666] ">
+        <div class="gola overflow-hidden p-2 h-28 w-28 lg:h-48 lg:w-48 shadow-md  rounded-full  ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/WhatsApp Image 2024-04-02 at 6.24.57 PM.jpeg" alt="">
+        </div>
+        <p class="text-white">Allows the child to learn at his own pace</p>
+    </div>
+    <div class="box lg:h-[20vw] w-full flex-col items-center gap-5 flex py-7 justify-center rounded-xl lg:w-[25vw] bg-[#FFC000]">
+        <div class="gola overflow-hidden p-2 h-28 w-28 lg:h-48 lg:w-48 shadow-md  rounded-full ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/WhatsApp Image 2024-04-02 at 6.24.52 PM.jpeg"  alt="">
+        </div>
+        <p class="text-white">All round personality development</p>
+    </div>
+    <div class="box lg:h-[20vw] w-full flex-col items-center gap-5 flex py-7 justify-center rounded-xl lg:w-[25vw] bg-[#FF6666]">
+        <div class="gola overflow-hidden p-2 h-48 w-48 shadow-md  rounded-full  ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/1.jpg" alt="">
+        </div>
+        <p class="text-white">Warm, Loving & Safe Environment.</p>
+    </div>
+    <div class="box lg:h-[20vw] w-full rounded-xl flex-col items-center gap-5 flex py-6 justify-center lg:w-[25vw] bg-[#FFC000] ">
+        <div class="gola overflow-hidden p-2 h-48 w-48 shadow-md  rounded-full  ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/2.jpg" alt="">
+        </div>
+        <p class="text-white text-center px-5">Safety, Security , Hygiene and Nutritious Meal Plans
+            </p>
+    </div>
+    <div class="box lg:h-[20vw] w-full flex-col items-center gap-5 flex py-6 justify-center rounded-xl lg:w-[25vw] bg-[#FF6666]">
+        <div class="gola overflow-hidden p-2 h-48 w-48 shadow-md  rounded-full  ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/whats1.jpeg" alt="">
+        </div>
+        <p class="text-white px-5">Warm & Cozy Nap & Rest Rooms For Day- Boarding & Day Care</p>
+    </div>
+    <div class="box lg:h-[20vw] w-full flex-col items-center gap-5 flex py-7 justify-center rounded-xl lg:w-[25vw] bg-[#FFC000]">
+        <div class="gola overflow-hidden p-2 h-48 w-48 shadow-md  rounded-full  ">
+            <img class="h-full rounded-full object-cover w-full" src="/images/WhatsApp Image 2024-04-02 at 6.24.57 PM.jpeg" alt="">
+        </div>
+        <p class="text-white">Full CCTV coverage for added safety.</p>
+    </div>
+</div>
+
+</div>
+
+<div class="page-4 h-fit py-10">
+    <div class="div bg-[#e0d9d2] ">
+        <img class="lg:h-10 rotate-180" src="https://wordpress.vecurosoft.com/knirpse/wp-content/uploads/2022/01/main-shape-after.png" alt="">
+    </div>
+    <div class="page-4-content bg-[#e0d9d2] lg:px-28 pt-10">
+
+        <h1 class="text-[30px] font-bold mb-4 text-[#7A0222] 
+        ">Answers to Your ALL SEASONS PRE-SCHOOL Queries</h1>
+        <h3 class="text-md md:text-2xl mb-6" style="color: #646363;">Frequently Asked Questions</h3>
+
+        <div class="layout text-left">
+            <div class="accordion">
+                <div class="accordion__question flex justify-between items-center">
+                    <p> IS PRESCHOOL NECESSARY?
+
+                    </p>
+                    <i class="ri-arrow-down-double-line"></i>
+                </div>
+                <div class="accordion__answer">
+                    <p>Preschool is a time for great exploration and learning for your child. It is a time of their growth. It is a time of forming lifelong friendships. Preschool can be the foundation for education and socializing among children.</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__question flex justify-between items-center">
+                    <p class="uppercase">Why All Seasons Preschool?
+                    </p>
+                    <i class="ri-arrow-down-double-line"></i>
+
+                </div>
+
+                <div class="accordion__answer">
+                    <p>
+                        •	Child-centered learning environment <br>
+•	Smart Digital Classrooms <br>
+•	Flexible curriculum <br>
+•	Digital Based Activities <br>
+•	All round personality development <br>
+
+                    </p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__question flex justify-between items-center">
+                    <p class="uppercase">What is the teacher - student ratio in All Seasons?
+                    </p>
+                    <i class="ri-arrow-down-double-line"></i>
+                </div>
+                <div class="accordion__answer">
+                    <p>Our teacher-student ratio is 2:12 (One teacher and One Assistant with 12 students)</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion__question flex justify-between items-center">
+                    <p class="uppercase">What is the admission cycle at All Seasons Preschool?
+                    </p>
+                    <i class="ri-arrow-down-double-line"></i>
+
+                </div>
+
+                <div class="accordion__answer">
+                    <p>
+                        Admissions are open all throughout the year, but purely on the basis of availability of seats and hence we recommend blocking seats well in advance.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="div bg-[#e0d9d2] ">
+        <img class="lg:h-10 " src="https://wordpress.vecurosoft.com/knirpse/wp-content/uploads/2022/01/main-shape-after.png" alt="">
+    </div>
+</div>
+<div class="page4  bg-[#A81B49]">
+    
+    <div class="sub-footer lg:h-[60vh] lg:px-32 flex-col lg:flex-row py-10 flex justify-between">
+        <div class="part-1 lg:w-[35%]">
+            <div class="left">
+                <a href="/"><img class="h-[90px]" src="/images/all-seasons_page-0001.jpg" alt=""></a>
+            </div>
+            <p class=" pt-10 text-white">ALL SEASONS is different & Unique Preschool with its unique designed curriculum which include all round personality development, yoga, dance, music and many more such activities to prepare a child for formal education. </p>
+<div class="div gap-3 pt-10 text-white flex">
+    <i class="ri-facebook-fill hover:bg-green-500 text-lg bg-[#FF6666] rounded-full px-1"></i>
+    <i class="ri-instagram-line hover:bg-green-500 text-lg bg-[#1AB9FF] rounded-full px-1"></i>
+    <i class="ri-twitter-x-fill hover:bg-green-500 text-lg bg-yellow-300 rounded-full px-1"></i>
+    <i class="ri-linkedin-fill hover:bg-green-500 text-white text-lg bg-[#ABCD52] rounded-full px-1"></i>
+</div>
+        </div>
+
+        <div class="part-4 flex flex-col lg:flex-row gap-10 justify-between lg:pl-10 lg:gap-2 lg:w-[65%]">
+           <div class="left"> <h1 class="text-2xl font-[600] text-white">CONTACT US</h1>
+        <div class="div text-xl flex flex-col gap-3 text-white pt-10">
+            <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
+            <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin.contact2%> , <%= admin.contact1%> , 9706056699 </div>
+            <div class="box1 flex gap-5"> <i class="ri-mail-line text-[#ABCD52]"></i>info@allseasons.co.in</div>
+            <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
+        </div>
+        </div>
+           <div class="left"> <h1 class="text-2xl font-[600] text-white">NEWS FEED</h1>
+        <div class="div text-xl flex flex-col gap-1 text-white pt-10">
+             <h1>Hello World!</h1>
+            <div class="box1 flex gap-5"> <i class="ri-calendar-2-fill text-[#ABCD52]"></i> 26 March 2024</div>
+           <h1 class="pt-5">What can tracks teach kids Preschool</h1> 
+            <div class="box1 flex gap-5"><i class="ri-calendar-2-fill text-[#ABCD52]"></i>08 January 2022</div>
+        </div>
+        </div>
+          
+        </div>
+    </div>
+   
+</div>
+</div>
+<div id="scroll-to-top" class="bounce" onclick="scrollToTop()">
+    <span>&#8593;</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ <!-- Initialize Swiper -->
+ <script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+    <!-- FAQ Section JS -->
+    <script>
+        let answers = document.querySelectorAll(".accordion");
+        answers.forEach((event) => {
+            event.addEventListener("click", () => {
+                if (event.classList.contains("active")) {
+                    event.classList.remove("active");
+                } else {
+                    event.classList.add("active");
+                }
+            });
+        });
+    </script>
+    <script src="/javascripts/sidebar.js"></script>
+
+    <!-- Scroll to top JS -->
+    <script src="/javascripts/scrollToTop.js"></script>
+

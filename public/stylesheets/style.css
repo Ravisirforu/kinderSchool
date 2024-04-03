@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+}
+.main{
+  height: 100%;
+  width: 100%;
+}
+a{
+  text-decoration: none;
+}
+.head{
+height: 10px;
+width: 100%;
+background: #000;
+}
+nav{
+  height: 90px;
+  width: 100%;
+  
+  top: 0;
+  background-color: #fff;
+  z-index: 99999;
+}
+nav #menu-btn{
+  display: none;
+  font-size: 18px;
+  color: #7A0222;
+  font-weight: 600;
+}
+nav .right h4{
+font-size: 18px;
+color: #7A0222;
+font-weight: 600;
+}
+
+
+#slidebar {
+  width: 150px;
+  height: 70%;
+  background-color: #7A0222;
+  position: fixed;
+  right: 0;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  top: 0;
+  z-index: 9889;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+#slidebar a {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.page-1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+   
+}
+.page-1-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    top: 40%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.page-1-content h1{
+    line-height: 1.1;
+}
+.page-1-content p{
+    font-size: 18px;
+}
+
+
+.page-1-footer{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    z-index: 99;
+}
+.page-1-footer-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.page-2{
+  /* height: 100vh; */
+  width: 100%;
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+}
+.page-3{
+  /* height: 100vh; */
+  width: 100%;
+  position: relative;
+  padding: 40px 20px;
+
+}
+.page-4{
+  height: 100vh;
+  text-align: center;
+}
+.page-4-content{
+
+  padding: 40px 20px;
+}
+
+
+.accordion {
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  color:#541F1F;
+  border-radius: 10px;
+}
+
+.accordion__question p {
+  margin: 5px;
+  padding: 0;
+  font-size: 17px;
+}
+
+.accordion__answer p {
+  margin: 5px;
+  padding: 10px;
+  color:#541F1F;
+  border-radius: 10px;
+}
+
+.accordion:hover {
+  cursor: pointer;
+}
+
+.accordion__answer {
+  display: none;
+}
+
+.accordion.active .accordion__answer {
+  display: block;
+}
+
+@media screen and (max-width: 640px) {
+  .page-1-content{
+    margin-top: -50px;
+  }
+  nav .right li{
+    display: none;
+  }
+  nav #menu-btn{
+    display: block;
+}
+.page-1-content{
+  width: 70%;
+}
+
+.page-1-content p{
+  font-size: 15px;
+}
+.page-1-footer{
+    gap: 40px;
+    bottom: 10%;
+}
+.page-1-footer-item img{
+  height: 30px;
+}
+  .page-3{
+    flex-direction: column;
+  }
+  .page-3 .left{
+    width: 100%;
+    height: 70%;
+}
+.page-3 .left img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.page-3 .right{
+    width: 100%;
+    padding: 40px;
+    color: #fff;
+    text-align: center;
+}
+.page-3-items{
+    margin-top: 30px;
+}
+.page-3-items img{
+    height: 30px;
+  }
+  .page-3-items h3{
+    font-size: 13px;
+  }
+  .accordion__question p {
+    margin: 5px;
+    padding: 0;
+    font-size: 15px;
+}
+}
+
+@media screen and (max-width:768px) {
+
+  .sub-footer {
+    gap: 30px;
+    color: #fff;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+  }
+
+  .sub-footer h1 {
+    font-size: 25px;
+  }
+
+  .sub-footer ul {
+    margin-top: 15px;
+  }
+
+  .sub-footer li {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 448px) {
+  .page-1-content p{
+    font-size: 14px;
+  }
+  .page-1-content button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  .swiper-button-next:after{
+    font-size: 15px;
+  }
+  .swiper-button-prev:after{
+    font-size: 15px;
+  }
+  .page-1-footer{
+    gap: 30px;
+    bottom: 10%;
+    padding: 10px;
+}
+.page-1-footer-item img{
+  height: 20px;
+}
+
+}
+@media screen and (max-width:562px) {
+ 
+  footer h1 {
+    font-size: 16px;
+  }
+
+}
+
+
+@media screen and (max-width:460px) {
+
+
+
+  .sub-footer {
+    padding: 20px;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  .sub-footer h1 {
+    font-size: 18px;
+  }
+
+  .sub-footer li {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+
+  footer h1 {
+    font-size: 13px;
+  }
+
+  footer .part-2 {
+    gap: 10px;
+  }
+
+  footer .part-2 i {
+    font-size: 13px;
+  }
+
+}
