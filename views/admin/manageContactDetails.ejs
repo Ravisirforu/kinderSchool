@@ -56,23 +56,27 @@
 <body>
     <div class="main">
         <div class="dashboard">
-
-            <div id="mySidebar" class="sidebar">
+            <div id="mySidebar" class="sidebar ">
                 <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">×</a>
-                <img class=" p-1 rounded-lg h-[90px] mx-auto" src="/images/all-seasons_page-0001.jpg" alt="">
-                <div class="sidebar-links flex flex-col mt-8 gap-6 items-center text-white text-[20px]">
+                <img class=" p-1 h-[90px] mx-7 rounded-xl" src="/images/all-seasons_page-0001.jpg" alt="">
+                <div class="sidebar-links px-7 flex flex-col mt-10 gap-5  text-white text-[20px]">
                     <a href="/dashboard"
                         class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Dashboard</a>
                     <a href="/manageContactDetails"
-                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Change Contact
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Edit Contact
                         Details</a>
+                    <a href="/createEvent"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Create Event</a>
+                        <a href="/manageEvent"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Manage
+                        Events</a>
                     <a href="/logout" class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Logout</a>
                 </div>
             </div>
             <div id="right-dashboard">
                 <div class="nav flex items-center justify-between w-full py-4 px-6 border-b-2 border-gray-200 	">
                     <div class="left flex items-center gap-3">
-                        <img class="h-[40px]" src="/images/tcps logo.jpeg" alt="">
+                        <img class="h-[40px]" src="/images/all-seasons_page-0001.jpg" alt="">
                         <h1 class="font-bold text-xl text-[#7A0222]">ALL SEASONS SCHOOL Admin Panel</h1>
                     </div>
                     <div class="right flex items-center gap-2">
@@ -83,7 +87,7 @@
 
                 <!--  Manage Contact Details  -->
                 <div class=" p-8 rounded shadow-md w-full">
-                    <h2 class="text-2xl font-bold mb-8 text-[#7A0222] text-center"> Manage Contact Details </h2>
+                    <h2 class="text-2xl font-bold mb-8  text-center"> Manage Contact Details </h2>
                     <form action="/manageContactDetails" method="POST">
 
                         <div class="mb-5">
@@ -114,7 +118,7 @@
                         </div>
 
                         <button type="submit"
-                            class="w-full py-2 px-4 border border-transparent rounded-md text-white bg-[#7A0222] hover:bg-[#7a0222e2] focus:bg-[#7a0222dd] active:bg-[#7A0222] transition duration-150 ease-in-out">Submit
+                            class="w-full py-2 px-4 border border-transparent rounded-md text-white bg-[#99072E] hover:bg-[#99072Ee2] focus:bg-[#99072Edd] active:bg-[#99072E] transition duration-150 ease-in-out">Submit
                             Details
                         </button>
                     </form>

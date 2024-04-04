@@ -124,10 +124,12 @@
             <a href="/"><img class="h-[90px]" src="/images/all-seasons_page-0001.jpg" alt=""></a>
         </div>
         <div class="right">
-            <ul class="flex gap-10 items-center  ">
-                <li class="text-[#7A0222] font-bold"><a href="/">Best Play SchooL </a></li>
+            <ul class="flex gap-8 items-center  ">
+                <li class="text-[#7A0222] font-bold"><a href="/">Home</a></li>
                 <li class="text-[#7A0222] font-bold"><a href="/about">About</a></li>
                 <li class="text-[#7A0222] font-bold"><a href="/gallery">Gallery</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/programs">Our Programs</a></li>
+                <li class="text-[#7A0222] font-bold"><a href="/activity">Activities</a></li>
                 <li class="text-[#7A0222] font-bold"><a href="/contact">Contact Us</a></li>
                 <li class="text-[#7A0222] font-bold"><a href="/login">Login</a></li>
                 <h4><i id="menu-btn" class=" text-[#7A0222] ri-menu-line"></i></h4>
@@ -136,9 +138,14 @@
     </div>
 </nav>
 <div id="slidebar" class=" bg-[#7A0222]">
+    <div class="left">
+        <a href="/"><img class="h-[90px] rounded" src="/images/all-seasons_page-0001.jpg" alt=""></a>
+    </div>
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/gallery">Gallery</a>
+    <a href="/programs">Our Programs</a>
+    <a href="/activity">Activities</a>
     <a href="/contact">Contact</a>
     <!-- <a href="/register">Register</a> -->
     <a href="/login">Login</a>
@@ -192,10 +199,10 @@
 </div>
 <div class="div h-[60vh] relative w-full">
     <img class="h-full w-full" src="https://img.freepik.com/free-vector/colorful-frame-background-creative-design-kids-vector_53876-156361.jpg?size=626&ext=jpg&ga=GA1.1.1887574231.1711843200&semt=ais" alt="">
-    <div class="div h-full w-full absolute gap-3 pl-5 sm:gap-3 lg:gap-8 flex-col top-0 flex pt-28  ">
-        <h1 class="lg:text-5xl lg:font-[700] lg:pl-96 text-[#7A0222] ">OUR MISSION</h1>
-        <p class=" lg:text-xl lg:pl-[35vw] text-[#5b5e60] ">Our Mission is to provide high quality education through activity <br> - based learning and giving them the skills for life.</p>
-        <p class=" lg:text-xl lg:pl-[35vw] text-[#5b5e60] "> We are equally concerned to provide for the most able children and <br> - have many strategies to extend and challenge these pupils. </p>
+    <div class="div h-full w-full absolute gap-3 p-5 sm:gap-3 lg:gap-8 flex-col top-0 flex pt-28  ">
+        <h1 class="lg:text-5xl md:text-3xl text-xl lg:font-[700] md:pl-[31vw] lg:pl-[36vw] text-[#7A0222] ">OUR MISSION</h1>
+        <p class=" lg:text-xl text-center  text-[#5b5e60] ">Our Mission is to provide high quality education through activity <br> - based learning and giving them the skills for life.</p>
+        <p class=" lg:text-xl text-center text-[#5b5e60] "> We are equally concerned to provide for the most able children and <br> - have many strategies to extend and challenge these pupils. </p>
     </div>
 </div>
 <div class="page-2">
@@ -338,9 +345,10 @@
         <div class="part-4 flex flex-col lg:flex-row gap-10 justify-between lg:pl-10 lg:gap-2 lg:w-[65%]">
            <div class="left"> <h1 class="text-2xl font-[600] text-white">CONTACT US</h1>
         <div class="div text-xl flex flex-col gap-3 text-white pt-10">
-            <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
+            <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> <%= admin && admin.location1 ? admin.location1
+                : 'Opposite Rolling Mill, Guwahati, Assam' %> </div>
             <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin && admin.contact1 ? admin.contact1
-                : '9346017770' %>, <%= admin && admin.contact1 ? admin.contact1
+                : '9346017770' %>, <%= admin && admin.contact2 ? admin.contact2
                 : '9346017770' %> , 9706056699 </div>
             <div class="box1 flex gap-5"> <i class="ri-mail-line text-[#ABCD52]"></i>info@allseasons.co.in</div>
             <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
@@ -360,6 +368,10 @@
    
 </div>
 </div>
+<a href="https://wa.me/919706056699" class="text-decoration-none bounce" id="whatspp" ><button
+    class="btn   "><i
+      class="ri-whatsapp-fill "></i></button>
+</a>
 <div id="scroll-to-top" class="bounce" onclick="scrollToTop()">
     <span>&#8593;</span>
 </div>

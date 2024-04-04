@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/sidebar.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .admin-content .card {
+            background: linear-gradient(to right, #007bff 50%, #fff 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all 0.5s ease-out;
+        }
+
+        .admin-content .card:hover {
+            background-position: left bottom;
+        }
+
+        .admin-content .card h2 {
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 854px) {
+            .admin-content .card h2 {
+                font-size: 14px;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #99072e;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .admin-products button {
+            background-color: #FFC000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="dashboard">
+            <div id="mySidebar" class="sidebar ">
+                <a href="javascript:void(0)" class="closebtn text-white" onclick="closeNav()">×</a>
+                <img class=" p-1 h-[90px] mx-7 rounded-xl" src="/images/all-seasons_page-0001.jpg" alt="">
+                <div class="sidebar-links px-7 flex flex-col mt-10 gap-5  text-white text-[20px]">
+                    <a href="/dashboard"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Dashboard</a>
+                    <a href="/manageContactDetails"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Edit Contact
+                        Details</a>
+                    <a href="/createEvent"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Create Event</a>
+                        <a href="/manageEvent"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Manage
+                        Events</a>
+                    <a href="/logout" class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Logout</a>
+                </div>
+            </div>
+            <div id="right-dashboard">
+                <div class="nav flex items-center justify-between w-full py-4 px-6 border-b-2 border-gray-200 	">
+                    <div class="left flex items-center gap-3">
+                        <img class="h-[40px]" src="/images/all-seasons_page-0001.jpg" alt="">
+                        <h1 class="font-bold text-xl text-[#7A0222]">ALL SEASONS SCHOOL Admin Panel</h1>
+                    </div>
+                    <div class="right flex items-center gap-2">
+                        <button class="openbtn lg:hidden" onclick="openNav()">☰</button>
+                    </div>
+                </div>
+                <!-- Create Event  -->
+                
+                <div class="admin-products" style="overflow-x: auto">
+                    <h1 class="text-center mt-4 font-semibold text-2xl">
+                        Manage ALL SEASONS SCHOOL Events
+                    </h1>
+                    <% if (successMessage) { %>
+                        <div class="flash-message success px-6 py-2" style="font-size: 18px; color: orangered; ">
+                            <%= successMessage %>
+                        </div>
+                        <% } %>
+
+                            <!-- Display error flash message -->
+                            <% if (errorMessage) { %>
+                                <div class="flash-message error px-6 py-3" style="font-size: 18px; color: orangered">
+                                    <%= errorMessage %>
+                                </div>
+                                <% } %>
+                                    <table border="1">
+                                        <thead>
+                                            <tr>
+                                                <th>Event Name</th>
+                                                <th>Event Date</th>
+                                                <th>Event Description</th>
+                                                <th>Event Image</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% events.forEach(function(event){ %>
+                                                <tr>
+                                                    <td>
+                                                        <%= event.eventName %>
+                                                       
+                                                    </td>
+                                                    <td>
+                                                        <% 
+                                                        // Assuming event.eventDate is a JavaScript Date object
+                                                        const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+                                                        const formattedDate = event.eventDate.toLocaleDateString(undefined, options);
+                                                    %>
+                                                    <p><%= formattedDate %></p>
+                                                       
+                                                    </td>
+
+                                                    <td>
+                                                        <%= event.eventDescription %>
+                                                    </td>
+                                                    <td>
+                                                        <div class="flex justify-center  flex-wrap gap-2 ">
+                                                            <% event.eventImages.forEach(function(image) { %>
+                                                                <img class="rounded" src="<%= image %>" alt="" style="width: 100px; object-fit: cover; margin-right: 10px;">
+                                                            <% }) %>
+                                                            
+                                                           
+                                                        </div>
+                                                    </td>
+                                                    <td class="flex flex-col gap-2 justify-center items-center h-full">
+                                                        <a href="/editEvent/<%= event._id %>"><button
+                                                                style="background-color: yellowgreen">
+                                                                Edit
+                                                            </button></a>
+                                                        <a
+                                                            href="/deleteEvent/<%= event._id %>"><button>Delete</button></a>
+                                                    </td>
+                                                </tr>
+                                                <% }) %>
+                                        </tbody>
+                                    </table>
+                </div>
+
+                <!-- Create Event  -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/adminsidebar.js"></script>
+</body>
+
+</html>
