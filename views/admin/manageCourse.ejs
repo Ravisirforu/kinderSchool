@@ -120,7 +120,7 @@
                 
                 <div class="admin-products" style="overflow-x: auto">
                     <h1 class="text-center mt-4 font-semibold text-2xl">
-                        Manage ALL SEASONS SCHOOL Events
+                        Manage ALL SEASONS SCHOOL Courses
                     </h1>
                     <% if (successMessage) { %>
                         <div class="flash-message success px-6 py-2" style="font-size: 18px; color: orangered; ">
@@ -137,49 +137,45 @@
                                     <table border="1">
                                         <thead>
                                             <tr>
-                                                <th>Event Name</th>
-                                                <th>Event Date</th>
-                                                <th>Event Description</th>
-                                                <th>Event Image</th>
+                                                <th>Course Name</th>
+                                                <th>Course Description</th>
+                                                <th>Course Duration</th>
+                                                <th>Course Price</th>
+                                                <th>Course Image</th>
+                                                <th>Seats Available</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <% events.forEach(function(event){ %>
+                                            <% courses.forEach(function(course){ %>
                                                 <tr>
                                                     <td>
-                                                        <%= event.eventName %>
-                                                       
+                                                        <%= course.courseName %>
                                                     </td>
-                                                    <td>
-                                                        <% 
-                                                        // Assuming event.eventDate is a JavaScript Date object
-                                                        const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-                                                        const formattedDate = event.eventDate.toLocaleDateString(undefined, options);
-                                                    %>
-                                                    <p><%= formattedDate %></p>
-                                                       
-                                                    </td>
-
                                                     <td class="w-96">
-                                                        <%= event.eventDescription %>
+                                                        <%= course.eventDescription %>
                                                     </td>
                                                     <td>
-                                                        <div class="flex justify-center  flex-wrap gap-2 ">
-                                                            <% event.eventImages.forEach(function(image) { %>
-                                                                <img class="rounded" src="<%= image %>" alt="" style="width: 100px; object-fit: cover; margin-right: 10px;">
-                                                            <% }) %>
-                                                            
-                                                           
-                                                        </div>
+                                                        <%= course.courseDuration %>
+                                                    </td>
+                                                    <td>
+                                                        <%= course.coursePrice %>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <img src="<%= course.courseImage %>" alt=""
+                                                            style="width: 100px" />
+                                                    </td>
+                                                    <td>
+                                                        <%= course.seatsAvailable %>
                                                     </td>
                                                     <td class="flex flex-col gap-2 justify-center items-center h-full">
-                                                        <a href="/editEvent/<%= event._id %>"><button
+                                                        <a href="/editCourse/<%= course._id %>"><button
                                                                 style="background-color: yellowgreen">
                                                                 Edit
                                                             </button></a>
                                                         <a
-                                                            href="/deleteEvent/<%= event._id %>"><button>Delete</button></a>
+                                                            href="/editCourse/<%= course._id %>"><button>Delete</button></a>
                                                     </td>
                                                 </tr>
                                                 <% }) %>

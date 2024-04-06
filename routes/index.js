@@ -6,6 +6,7 @@ require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
 const jwt = require("jsonwebtoken");
 require('dotenv').config({path:"./.env"})
+const courseModel = require("./course");
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -69,6 +70,92 @@ router.post("/register", async function (req, res, next) {
 });
 router.get("/dashboard", isLoggedIn, async function (req, res, next) {
   res.render("admin/dashboard");
+});
+router.post('/createCourse', isLoggedIn,async (req, res) => {
+  const course = req.files.courseImage;
+  cloudinary.uploader.upload(course.tempFilePath, async function (err, result) {
+    if (err) return next(err);
+    const newCourse = new courseModel({
+      courseName: req.body.courseName,
+      courseDescription: req.body.courseDescription,
+      courseDuration: req.body.courseDuration,
+      coursePrice: req.body.coursePrice,
+      courseImage: result.secure_url,
+      seatsAvailable: req.body.seatsAvailable,
+    });
+    await newCourse.save();
+    req.flash('success', 'course created successfully');
+    res.redirect('/manageCourse');
+  })
+});
+router.get('/createCourse', isLoggedIn,(req, res) => {
+res.render('admin/createCourse');
+});
+router.get('/manageCourse', isLoggedIn, async function (req, res, next) {
+  try {
+    const courses = await courseModel.find({});
+
+    // Pass flash messages to the template
+    const successMessage = req.flash('success');
+    const errorMessage = req.flash('error');
+
+    res.render('admin/manageCourse', { courses, successMessage, errorMessage });
+  } catch (error) {
+    console.error("Error fetching course:", error);
+    req.flash('error', 'Failed to fetch course data');
+    res.redirect('/dashboard'); // Redirect to a suitable page in case of error
+  }
+});
+
+router.get('/editCourse/:id', isLoggedIn, async function (req, res, next) {
+  const course = await courseModel.findById(req.params.id);
+  res.render('admin/editCourse', { course });
+});
+
+router.post('/editCourse/:id', isLoggedIn, async function (req, res, next) {
+  try {
+    const course = await courseModel.findByIdAndUpdate(req.params.id, {
+      courseName: req.body.courseName,
+      courseDescription: req.body.courseDescription,
+      courseDuration : req.body.courseDuration,
+      coursePrice: req.body.coursePrice,
+      seatsAvailable:req.body.seatsAvailable
+    }, { new: true });
+    await course.save();
+
+    // Set flash message
+    req.flash('success', 'Course details updated successfully');
+
+    res.redirect('/manageCourse');
+  } catch (error) {
+    // Handle error appropriately
+    console.error("Error updating product:", error);
+    req.flash('error', 'Failed to update product details');
+    res.redirect('/dashboard');
+  }
+});
+
+router.get('/deleteCourse/:id', isLoggedIn, async function (req, res, next) {
+  try {
+    const course = await courseModel.findById(req.params.id);
+
+    // Delete the image from Cloudinary
+    const imageURL = course.courseImage;
+    const publicID = imageURL.split('/').pop().split('.')[0];
+    await cloudinary.uploader.destroy(publicID);
+
+    // Delete the course from the database
+    await courseModel.findByIdAndDelete(req.params.id);
+
+    // Set flash message
+    req.flash('success', 'Course deleted successfully');
+
+    res.redirect('/manageCourse');
+} catch (error) {
+    console.error("Error deleting course:", error);
+    req.flash('error', 'Failed to delete course');
+    res.redirect('/manageCourse');
+}
 });
 router.get("/createEvent", isLoggedIn, (req, res) => {
   res.render("admin/createEvent");

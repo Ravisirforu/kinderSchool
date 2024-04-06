@@ -7,6 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/sidebar.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .admin-content .card {
@@ -88,23 +92,29 @@
                 <img class=" p-1 h-[90px] mx-7 rounded-xl" src="/images/all-seasons_page-0001.jpg" alt="">
                 <div class="sidebar-links px-7 flex flex-col mt-10 gap-5  text-white text-[20px]">
                     <a href="/dashboard"
-                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Dashboard</a>
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-dashboard-line pr-2"></i>Dashboard</a>
                     <a href="/manageContactDetails"
-                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Edit Contact
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-contacts-book-2-line pr-2"></i>Contact
                         Details</a>
                     <a href="/createEvent"
-                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Create Event</a>
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-calendar-event-line pr-2"></i>Create Event</a>
+                        
+                        <a href="/createCourse"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-edit-box-line pr-2"></i>Create Course</a>
+                        <a href="/manageCourse"
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-edit-box-line pr-2"></i>Manage Course</a>
+                       
                         <a href="/manageEvent"
-                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Manage
+                        class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-calendar-event-line pr-2"></i>Manage
                         Events</a>
-                    <a href="/logout" class="transition duration-200 ease-in hover:scale-110 hover:font-bold">Logout</a>
+                    <a href="/logout" class="transition duration-200 ease-in hover:scale-110 hover:font-bold"><i class="ri-logout-box-line pr-2"></i>Logout</a>
                 </div>
             </div>
             <div id="right-dashboard">
                 <div class="nav flex items-center justify-between w-full py-4 px-6 border-b-2 border-gray-200 	">
                     <div class="left flex items-center gap-3">
                         <img class="h-[40px]" src="/images/all-seasons_page-0001.jpg" alt="">
-                        <h1 class="font-bold text-xl text-[#7A0222]">ALL SEASONS SCHOOL Admin Panel</h1>
+                        <h1 class="font-bold text-xl text-[#423F8D]">ALL SEASONS SCHOOL Admin Panel</h1>
                     </div>
                     <div class="right flex items-center gap-2">
                         <button class="openbtn lg:hidden" onclick="openNav()">☰</button>
@@ -150,7 +160,7 @@
         
         
                             <button type="submit"
-                            class="w-full py-2 px-4 border border-transparent rounded-md text-white bg-[#A81B49] hover:bg-[#A81B49] focus:bg-[#A81B49] active:bg-[#A81B49] transition duration-150 ease-in-out">Edit
+                            class="w-full py-2 px-4 border border-transparent rounded-md text-white bg-[#423F8D] hover:bg-[#423F8D] focus:bg-[#423F8D] active:bg-[#423F8D] transition duration-150 ease-in-out">Edit
                                 Event</button>
                         </form>
                        </div>
