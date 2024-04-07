@@ -185,7 +185,11 @@ font-weight: 600;
 .page-1-content{
   width: 70%;
 }
-
+nav .right ul li a:hover {
+  color: #ED078B;
+  transform: scale(1.1);
+  text-decoration: none;
+}
 .page-1-content p{
   font-size: 15px;
 }

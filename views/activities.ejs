@@ -1,4 +1,5 @@
-<% include ./partials/header.ejs %><style>
+<% include ./partials/header.ejs %>
+<style>
     @keyframes bounce {
 
         0%,
@@ -17,7 +18,15 @@
             transform: translateY(-15px);
         }
     }
+    nav .right ul li a {
+        transition: color 0.5s ease, transform 0.5s ease;
+    }
 
+    nav .right ul li a:hover {
+        color: #ED078B;
+        transform: scale(1.1);
+        text-decoration: none;
+    }
     .bounce {
         animation: bounce 2s infinite;
     }
@@ -28,7 +37,7 @@
             <div class="div text-[9px] lg:text-sm md:text-sm flex items-center h-full lg:px-2  lg:gap-5 text-white">
                 <div class="box1 flex  lg:gap-2"> <i class="ri-map-pin-line text-[#ABCD52]"></i> Opposite Rolling Mill, Guwahati, Assam</div>
                 <div class="box1 flex lg:gap-5"><i class="ri-phone-line text-[#ABCD52]"></i>97060 56699  </div>
-                <div class="box1 flex  lg:gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
+                <div class="box1 flex  lg:gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sat</div>
             </div>
             <div class="div gap-3 p-1 text-white hidden md:flex lg:flex">
                 <i class="ri-facebook-fill hover:bg-green-500 lg:text-lg  rounded-full px-2 py-1"></i>
@@ -117,11 +126,11 @@
         <div class="div text-xl flex flex-col gap-3 text-white pt-10">
             <div class="box1 flex gap-5"> <i class="ri-map-pin-line text-[#ABCD52]"></i> <%= admin && admin.location1 ? admin.location1
                 : 'Opposite Rolling Mill, Guwahati, Assam' %> </div>
-            <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin && admin.contact1 ? admin.contact1
-                : '9346017770' %>, <%= admin && admin.contact2 ? admin.contact2
-                : '9346017770' %> , 9706056699 </div>
+                <div class="box1 flex gap-5"><i class="ri-phone-line text-[#ABCD52]"></i><%= admin && admin.contact1 ? admin.contact1
+                    : '9706056699' %>, <%= admin && admin.contact2 ? admin.contact2
+                    : '9864060737' %> , 9706518256 </div>
             <div class="box1 flex gap-5"> <i class="ri-mail-line text-[#ABCD52]"></i>info@allseasons.co.in</div>
-            <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sun</div>
+            <div class="box1 flex gap-5"><i class="ri-time-line text-[#ABCD52]"></i>9:30 am - 6:30 pm - Mon - Sat</div>
         </div>
         </div>
            <div class="left"> <h1 class="text-2xl font-[600] text-white">NEWS FEED</h1>
