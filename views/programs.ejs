@@ -235,6 +235,38 @@
                                 </div>
                             </div>              
                             </div>
+
+                            <% course ? course.forEach(function(event){ %>
+                                <div class=" bg-white gap-2 flex flex-col overflow-hidden  md:h-[70vw] md:w-[40vw] lg:h-[40vw] lg:w-[25vw]  xl:h-[34vw] rounded-2xl xl:w-[23vw] ">
+                                    <div class="  h-[50%] w-full  bg-yellow-100">
+                                        <img class="h-full w-full object-cover" src="<%= event.courseImage %>" alt="">
+                                    </div>
+                                    <div class="rght flex  flex-col gap-1 px-5  h-[50%] py-1">
+                                        <h1 class=" font-[800] text-[#423F8D] hover:text-[#ED078B]
+                                        text-xl"><%= event.courseName %></h1>
+                                        <p class="text-zinc-700 pb-2 text-[13px]"><%= event.courseDescription %>  </p>
+                                    
+                                        <hr class=" text-black h-[2px]">
+                                        <div class="div flex pb-5 py-1 justify-between px-2 items-center h-full">
+                                            
+                                            <div class="div ">
+                                                <h1 class="font-[800] xl:text-lg text-[#ED078B]"><%= event.courseDuration %></h1>
+                                                <h1 class="text-sm">Duration</h1>
+                                            </div>
+                                            <div class="div">
+                                                <h1 class="text-[#FBCE0F] font-[800] xl:text-lg"><%= event.coursePrice %></h1>
+                                                <h1 class="text-sm">Price</h1>
+                                            </div>
+                                            <div class="div">
+                                                <h1 class="text-[#1F97D4] font-[800] xl:text-lg"><%= event.seatsAvailable %></h1>
+                                                <h1 class="text-sm">Seat</h1>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>              
+                                    </div>
+                                <% }):"" %>
+
                 </div>  
           
 

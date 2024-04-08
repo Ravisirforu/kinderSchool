@@ -26,7 +26,8 @@ router.get("/gallery", async (req, res) => {
 });
 router.get("/programs", async (req, res) => {
   const admin = await userModel.findOne({ role: "admin" });
-  res.render("programs", { admin });
+  const course = await courseModel.find({});
+  res.render("programs", { admin,course });
 });
 router.get("/contact", async (req, res) => {
   const admin = await userModel.findOne({ role: "admin" });
